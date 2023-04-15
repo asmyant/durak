@@ -1,5 +1,5 @@
 const Card = require('./card.class')
-const {types, cards} = require('../helpers/cards')
+const { types, cards } = require('../helpers/cards')
 
 /**
  * Deck module,
@@ -11,7 +11,7 @@ class Deck {
 
   constructor() {
     this.create();
-    // this.shuffle();
+    this.shuffle();
     this.trump = this.cards.splice(0, 1)[0];
   }
 
@@ -38,9 +38,9 @@ class Deck {
    * Deck length = types * cards
    */
   create() {
-    types.forEach(({id: typeID}) =>
-      cards.forEach(({id}) => this.cards.push(
-        new Card({id, typeID})
+    types.forEach(({ id: typeID }) =>
+      cards.forEach(({ id }) => this.cards.push(
+        new Card({ id, typeID })
       )))
   }
 

@@ -11,10 +11,21 @@ class Table {
     this.trump = trump;
   }
 
+  takeAll() {
+    const all = [].concat(this.cards[0], this.cards[1]);
+    this.cards = [[], []];
+    return all;
+  }
+
+  checkAllClosed() {
+    return this.cards[0].length !== 0 ? this.cards[0].length === this.cards[1].length : false;
+  }
+
   /**
    * Push new card in table
    * @param card {Card}
    * @param closeIndex {number | boolean}
+   * @returns {boolean | number}
    */
   pushCard(card, closeIndex = false) {
     return closeIndex !== false
@@ -27,7 +38,7 @@ class Table {
    * @param card {Card}
    */
   #pushReceiveCard(card) {
-    let index = this.cards[0].findIndex(receiveCard => card.priority === receiveCard.priority)
+    let index = [].concat(this.cards[0], this.cards[1]).findIndex(receiveCard => card.priority === receiveCard.priority)
 
     return this.cards[0].length === 0 || index !== -1
       ? this.cards[0].push(card)
@@ -42,10 +53,14 @@ class Table {
   #closeReceiveCard(card, closeIndex) {
     let closeCard = this.cards[0][closeIndex];
 
-    return (card.typeId === this.trump.typeId && closeCard.typeId !== this.trump.typeId)
-    || (card.typeId === closeCard.typeId && card.priority > closeCard.priority)
+    const a = (card.typeId === this.trump.typeId && closeCard.typeId !== this.trump.typeId)
+      || (card.typeId === closeCard.typeId && card.priority > closeCard.priority)
       ? this.cards[1][closeIndex] = card
       : false;
+
+    console.log(this.cards);
+
+    return a;
   }
 }
 

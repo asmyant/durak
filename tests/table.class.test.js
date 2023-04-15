@@ -6,10 +6,10 @@ const deck = new Deck()
 const table = new Table(deck.trump)
 
 const cards = [
-  new Card({id: 7, typeID: 3}),
-  new Card({id: 6, typeID: 3}),
-  new Card({id: 6, typeID: 1}),
-  new Card({id: 7, typeID: 1}),
+  new Card({ id: 7, typeID: 3 }),
+  new Card({ id: 6, typeID: 3 }),
+  new Card({ id: 6, typeID: 1 }),
+  new Card({ id: 7, typeID: 1 }),
 ]
 
 describe('Table module test', () => {

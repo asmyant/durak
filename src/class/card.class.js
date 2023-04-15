@@ -1,4 +1,4 @@
-const {cards, types} = require('../helpers/cards')
+const { cards, types } = require('../helpers/cards')
 
 class Card {
   /**
@@ -6,7 +6,7 @@ class Card {
    * @param id {number} - Card id from cards object
    * @param typeID {number} - Type id from types object
    */
-  constructor({id, typeID}) {
+  constructor({ id, typeID }) {
     this.id = id
     this.typeID = typeID
   }
@@ -65,10 +65,6 @@ class Card {
    */
   get typeId() {
     return this.type.id
-  }
-
-  static getIndex(node) {
-    return Array.from(node.parentNode.children).indexOf(node);
   }
 }
 
