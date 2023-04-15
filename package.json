@@ -1,0 +1,16 @@
+{
+  "name": "durak",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "vite": "^4.2.0",
+    "vite-plugin-commonjs": "^0.6.2"
+  }
+}
