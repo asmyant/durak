@@ -56,11 +56,6 @@ function events() {
 
       console.log(selectedCloseCard);
     }
-
-    // Тот кто ждет
-    else {
-      alert('Не ваш черед');
-    }
   }));
 
   // Player take action event
@@ -94,7 +89,7 @@ function events() {
   tableCards.forEach(card => card.addEventListener('click', ({ currentTarget }) => {
     tableCards.forEach(card => card.style.background = 'white')
     currentTarget.style.background = 'red'
-    selectedCloseCard = Number(currentTarget.dataset.index);
+    selectedCloseCard = Number(currentTarget.dataset.index)
   }));
 
   // Bit event
@@ -116,10 +111,9 @@ let players = ['Tigran', 'Mane', 'Karen'].map((name, i) =>
   new Player({
     name,
     cards: deck.getCardsByCount(6),
+    role: i === 1 ? playerRoles.close : playerRoles.game,
   })
 );
-
-players = Player.togglePlayerRoles(players, activePlayer);
 
 console.log(players)
 

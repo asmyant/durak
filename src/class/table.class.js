@@ -38,7 +38,7 @@ class Table {
    * @param card {Card}
    */
   #pushReceiveCard(card) {
-    let index = [].concat(this.cards[0], this.cards[1]).findIndex(receiveCard => card.priority === receiveCard.priority)
+    let index = [...this.cards[0], ...this.cards[1]].findIndex(receiveCard => card.priority === receiveCard.priority)
 
     return this.cards[0].length === 0 || index !== -1
       ? this.cards[0].push(card)
