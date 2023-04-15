@@ -1,0 +1,176 @@
+$blue: #003875;
+$red: #B91533;
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.header {
+  border-bottom: 6px solid $red;
+  background-color: $blue;
+
+  &__logo {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 120px;
+
+    span {
+      margin-left: 25px;
+    }
+  }
+
+  .container {
+    position: relative;
+
+    &::before {
+      content: url('../images/usa-flag.png');
+      position: absolute;
+      left: 70%;
+      top: 0;
+    }
+  }
+
+  &__row {
+    height: 126px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__contacts{
+    display: flex;
+    align-items: center;
+  }
+
+  &__social {
+    margin-right: 15px;
+
+    a{
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-right: 10px;;
+      }
+    }
+  }
+
+  &__phone {
+    font-weight: 700;
+    font-size: 36px;
+    text-decoration: none;
+    line-height: 72px;
+    color: #FFFFFF;
+  }
+}
+
+.jumbotron {
+  border-bottom: 6px solid $red;
+  background: url('../images/jumbotron.jpg') no-repeat center/cover;
+
+  h1 {
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    color: $blue;
+
+    span {
+      margin-left: 15px;
+      color: $red;
+      text-transform: uppercase;
+    }
+  }
+
+  &__row {
+    height: 100vh;
+    max-height: 650px;
+    min-height: 650px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 830px;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 35px;
+
+    a {
+      color: $blue;
+      text-decoration: none;
+      transition: color .3s;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    max-width: 600px;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+
+  &__action {
+    text-align: center;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+
+    .icon {
+      width: 113px;
+      height: 113px;
+      background-color: $blue;
+      border-radius: 50%;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title {
+      font-size: 14px;
+      line-height: 42px;
+      text-align: center;
+      color: #404553;
+    }
+
+    .text {
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: $blue;
+    }
+  }
+}
